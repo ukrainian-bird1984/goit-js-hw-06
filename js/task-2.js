@@ -17,7 +17,7 @@ class Storage {
   }
 }
 
-const builder = new StringBuilder(".");
+const builder = new Storage(".");
 console.log(builder.getItems()); // "."
 builder.addItem("^");
 console.log(builder.getItems()); // "^."
