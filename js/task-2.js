@@ -8,19 +8,19 @@ class Storage {
     return this.#items;
   }
 
- addItem(newItem) {
-  this.#items += newItem;
-}
+  addItem(newItem) {
+    this.items.push(newItem);
+  }
  
-
   removeItem(itemToRemove) {
     this.#items = this.#items.split('').filter(item => item !== itemToRemove).join('');
   }
 }
 
-const builder = new Storage(".");
-console.log(builder.getItems()); // "."
-builder.addItem("^");
-console.log(builder.getItems()); // "^."
-builder.removeItem("^");
-console.log(builder.getItems()); // "."
+
+const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+storage.addItem("Droid");
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+storage.removeItem("Prolonger");
+console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
